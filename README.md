@@ -36,7 +36,7 @@ O **WeatherViewer** permite que o usuário consulte a previsão do tempo para os
 
 1.  **Clonar o repositório:**
     ```bash
-    git clone [https://github.com/SEU-USUARIO/WeatherViewer.git](https://github.com/SEU-USUARIO/WeatherViewer.git)
+    git clone [https://github.com/PedroTeixeira027/WeatherViewer.git]
     ```
 2.  **Abrir no Android Studio:** Selecione a pasta do projeto.
 3.  **Sincronizar:** Aguarde o Gradle baixar as dependências.
