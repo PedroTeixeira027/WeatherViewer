@@ -1,49 +1,42 @@
-# WeatherViewer - Android Forecast App 🌦️
+# WeatherViewer 🌦️
 
-Aplicação nativa Android para consulta de previsão do tempo, desenvolvida com foco em consumo de API REST, arquitetura limpa e boas práticas de UI/UX. Baseada nos conceitos do *WeatherViewer App* (Deitel).
+Trabalho Prático da disciplina de Programação III - Consumo de Web Service de Previsão do Tempo.
 
-## 📱 Sobre o Projeto
+## 👨‍🎓 Identificação do Aluno
 
-O **WeatherViewer** permite que o usuário consulte a previsão do tempo para os próximos 7 dias em qualquer cidade. O aplicativo resolve desafios comuns de desenvolvimento mobile, como:
-* Execução de tarefas de rede em background (assincronismo).
-* Tratamento de respostas JSON complexas.
-* Gerenciamento de erros de conexão e entrada de dados.
-* Interface responsiva com feedback visual ao usuário.
+* **Nome do aluno:** Pedro Henrique Teixeira da Silva
+* **Curso:** Sistemas de Informação
+* **Período:** 6º Período
+* **Disciplina:** Programação III - 2025/02
+* **Instituição:** Universidade do Estado de Minas Gerais - Unidade Passos
 
-## 🛠️ Tecnologias Utilizadas
+## 📝 Descrição da Aplicação
 
-* **Linguagem:** Java
-* **Ambiente:** Android Studio
-* **Componentes de UI:**
-    * `CoordinatorLayout` & `LinearLayout`
-    * `RecyclerView` / `ListView` com View Holder Pattern
-    * `FloatingActionButton` (FAB)
-    * `Snackbar` para mensagens de feedback
-    * `TextInputLayout` (Material Design)
-* **Rede & Dados:**
-    * `HttpURLConnection` (Consumo REST nativo)
-    * `AsyncTask` (Gerenciamento de Threads)
-    * `org.json` (Parsing de dados)
+Esta aplicação Android (Java) foi desenvolvida para consultar a previsão do tempo utilizando uma API RESTful específica. O projeto baseia-se na arquitetura apresentada no Capítulo 7 do livro didático ("WeatherViewer App"), com as devidas adaptações para o endpoint fornecido pelo professor.
 
-## 🚀 Funcionalidades
+**Principais funcionalidades:**
+* Entrada de dados do usuário (Cidade, Estado, País).
+* Conexão HTTP realizada em thread separada (AsyncTask).
+* Processamento de resposta JSON contendo array de dias.
+* Exibição de uma lista personalizada com: Data, Descrição do clima, Temperaturas (Min/Max em °C), Umidade e Ícone (Emoji).
+* Tratamento de erros de conexão e validação de URL.
 
-* **Busca Flexível:** Aceita input no formato "Cidade, Estado, País".
-* **Tratamento de Dados:** Codificação automática de URL (UTF-8) e sanitização de inputs.
-* **Feedback Visual:** Indicadores de carregamento e mensagens de erro amigáveis (Toasts e Snackbars).
-* **Lista Otimizada:** Exibição fluida dos dias da semana, temperaturas (Min/Max em °C), umidade e ícone (Emoji) fornecido pela API.
+## 🚀 Instruções para Execução
 
-## ⚙️ Como Executar
+1.  **Clonar o Repositório:** Faça o download ou clone este projeto para sua máquina local.
+2.  **Abrir no Android Studio:** Abra o projeto utilizando o Android Studio (Recomendado versão Ladybug ou superior).
+3.  **Sincronizar:** Aguarde o Gradle baixar as dependências e indexar o projeto.
+4.  **⚠️ Configuração da Chave de API:**
+    * **Nota de Segurança:** Por boas práticas de segurança, a chave da API (`APPID`) **não foi incluída** neste repositório público.
+    * **Como configurar:** Abra o arquivo `app/src/main/res/values/strings.xml` e adicione a chave correta na tag `api_key`.
+5.  **Executar:** Inicie a aplicação em um Emulador (Android 7.0+) ou dispositivo físico.
+6.  **Uso:**
+    * No campo de texto, digite a cidade no formato exato: `Cidade, Estado, País` (Exemplo: `Passos, MG, BR`).
+    * Clique no botão flutuante (Lupa) para carregar os dados.
 
-1.  **Clonar o repositório:**
-    ```bash
-    git clone [https://github.com/PedroTeixeira027/WeatherViewer.git]
-    ```
-2.  **Abrir no Android Studio:** Selecione a pasta do projeto.
-3.  **Sincronizar:** Aguarde o Gradle baixar as dependências.
-4.  **Executar:** Rode em um emulador (API 24+) ou dispositivo físico.
+## 🔗 Exemplo da URL Utilizada na Requisição
 
-**Nota sobre a API:**
-Este projeto consome uma API educacional hospedada na AWS. A chave de acesso está configurada internamente para fins de demonstração acadêmica.
+A aplicação monta a URL dinamicamente, garantindo a codificação correta dos espaços e caracteres especiais. Abaixo está o exemplo da estrutura da URL utilizada (com a chave ocultada):
 
----
-*Desenvolvido como projeto prático de Arquitetura de Software Móvel.*
+```text
+[http://agent-weathermap-env-env.eba-6pzgqekp.us-east-2.elasticbeanstalk.com/api/weather?city=Passos%2C%20MG%2C%20BR&days=7&APPID=](http://agent-weathermap-env-env.eba-6pzgqekp.us-east-2.elasticbeanstalk.com/api/weather?city=Passos%2C%20MG%2C%20BR&days=7&APPID=)[CHAVE_REMOVIDA_POR_SEGURANCA]
