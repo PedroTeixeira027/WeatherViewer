@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">WeatherViewer</string>
+
+    <string name="hint_text">Cidade, Estado, País (Ex: Passos, MG, BR)</string>
+    <string name="search_button_desc">Consultar Previsão</string>
+    <string name="loading">Carregando previsão...</string>
+    <string name="error_msg">Erro ao carregar dados. Verifique a cidade.</string>
+    <string name="invalid_url">URL Inválida.</string>
+
+    <string name="base_url">http://agent-weathermap-env-env.eba-6pzgqekp.us-east-2.elasticbeanstalk.com/api/weather</string>
+
+    <string name="api_key">COLOQUE_SUA_CHAVE_AQUI</string>
+</resources>
